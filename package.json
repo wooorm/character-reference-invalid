@@ -45,7 +45,7 @@
     "build-generate": "node script/generate.js",
     "build-bundle": "browserify index.js --bare -s characterReferenceInvalid > character-reference-invalid.js",
     "build-mangle": "esmangle character-reference-invalid.js > character-reference-invalid.min.js",
-    "build": "npm run build-md && npm run build-generate && npm run build-bundle && npm run build-mangle",
+    "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
     "lint-api": "eslint .",
     "lint-style": "jscs --reporter inline .",
     "lint": "npm run lint-api && npm run lint-style",
