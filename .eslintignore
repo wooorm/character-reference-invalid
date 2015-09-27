@@ -1,0 +1,6 @@
+build/
+components/
+coverage/
+build.js
+character-reference-invalid.js
+character-reference-invalid.min.js

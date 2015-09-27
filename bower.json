@@ -1,0 +1,39 @@
+{
+  "name": "character-reference-invalid",
+  "main": "character-reference-invalid.js",
+  "description": "HTML invalid numeric character reference information",
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "entity",
+    "numeric",
+    "character",
+    "reference",
+    "replacement",
+    "invalid",
+    "name"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/character-reference-invalid.git"
+  },
+  "authors": [
+    "Titus Wormer <tituswormer@gmail.com>"
+  ],
+  "ignore": [
+    ".*",
+    "*.log",
+    "*.md",
+    "build/",
+    "components/",
+    "coverage/",
+    "node_modules/",
+    "script/",
+    "build.js",
+    "example.js",
+    "index.js",
+    "test.js",
+    "component.json",
+    "package.json"
+  ]
+}

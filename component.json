@@ -1,0 +1,23 @@
+{
+  "name": "character-reference-invalid",
+  "version": "0.0.0",
+  "description": "HTML invalid numeric character reference information",
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "entity",
+    "numeric",
+    "character",
+    "reference",
+    "replacement",
+    "invalid",
+    "name"
+  ],
+  "repository": "wooorm/character-reference-invalid",
+  "json": [
+    "index.json"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}
