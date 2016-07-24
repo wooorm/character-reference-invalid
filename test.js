@@ -8,23 +8,15 @@
 
 'use strict';
 
-/* eslint-env node */
-
-/*
- * Dependencies.
- */
-
+/* Dependencies. */
 var test = require('tape');
 var characterReferenceInvalid = require('./');
 
-/*
- * Tests.
- */
+/* Tests. */
+test('characterEntities', function (t) {
+  t.equal(characterReferenceInvalid[0x80], '€');
+  t.equal(characterReferenceInvalid[0x89], '‰');
+  t.equal(characterReferenceInvalid[0x99], '™');
 
-test('characterReferenceInvalid', function (t) {
-    t.equal(characterReferenceInvalid[0x80], '€');
-    t.equal(characterReferenceInvalid[0x89], '‰');
-    t.equal(characterReferenceInvalid[0x99], '™');
-
-    t.end();
+  t.end();
 });

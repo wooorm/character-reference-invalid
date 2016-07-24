@@ -1,8 +1,8 @@
 .DS_Store
 *.log
-build/
-bower_components/
-components/
+.nyc_output/
 coverage/
+data/
 node_modules/
-build.js
+character-reference-invalid.js
+character-reference-invalid.min.js
