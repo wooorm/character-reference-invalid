@@ -29,19 +29,16 @@
     "browserify": "^13.0.1",
     "esmangle": "^1.0.1",
     "jsdom": "^9.4.1",
-    "nyc": "^7.0.0",
-    "remark-cli": "^1.0.0",
-    "remark-comment-config": "^4.0.0",
-    "remark-github": "^5.0.0",
-    "remark-lint": "^4.0.0",
-    "remark-validate-links": "^4.0.0",
+    "nyc": "^8.0.0",
+    "remark-cli": "^2.0.0",
+    "remark-preset-wooorm": "^1.0.0",
     "tape": "^4.0.0",
     "xo": "^0.16.0"
   },
   "scripts": {
     "build-md": "remark . --quiet --frail",
     "build-generate": "node script/generate.js",
-    "build-bundle": "browserify index.js --bare -s characterEntitiesHTML4 > character-reference-invalid.js",
+    "build-bundle": "browserify index.js --bare -s characterReferenceInvalid > character-reference-invalid.js",
     "build-mangle": "esmangle character-reference-invalid.js > character-reference-invalid.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
     "lint": "xo",
@@ -55,20 +52,11 @@
       "guard-for-in": "off"
     },
     "ignores": [
-      "character-reference-invalid.js",
-      "character-reference-invalid.min.js"
+      "character-reference-invalid.js"
     ]
   },
   "remarkConfig": {
     "output": true,
-    "plugins": [
-      "comment-config",
-      "github",
-      "lint",
-      "validate-links"
-    ],
-    "settings": {
-      "bullet": "*"
-    }
+    "presets": "wooorm"
   }
 }
