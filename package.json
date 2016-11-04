@@ -13,15 +13,15 @@
     "invalid",
     "name"
   ],
-  "files": [
-    "index.js",
-    "index.json"
-  ],
   "repository": "https://github.com/wooorm/character-reference-invalid",
   "bugs": "https://github.com/wooorm/character-reference-invalid/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "main": "index.json",
+  "files": [
+    "index.json"
   ],
   "dependencies": {},
   "devDependencies": {
@@ -38,7 +38,7 @@
   "scripts": {
     "build-md": "remark . --quiet --frail",
     "build-generate": "node script/generate.js",
-    "build-bundle": "browserify index.js --bare -s characterReferenceInvalid > character-reference-invalid.js",
+    "build-bundle": "browserify index.json --bare -s characterReferenceInvalid > character-reference-invalid.js",
     "build-mangle": "esmangle character-reference-invalid.js > character-reference-invalid.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
     "lint": "xo",
