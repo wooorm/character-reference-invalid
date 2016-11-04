@@ -37,7 +37,7 @@
   },
   "scripts": {
     "build-md": "remark . --quiet --frail",
-    "build-generate": "node script/generate.js",
+    "build-generate": "node build",
     "build-bundle": "browserify index.json --bare -s characterReferenceInvalid > character-reference-invalid.js",
     "build-mangle": "esmangle character-reference-invalid.js > character-reference-invalid.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
