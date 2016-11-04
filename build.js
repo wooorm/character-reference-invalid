@@ -1,26 +1,12 @@
-/**
- * @author Titus Wormer
- * @copyright 2015 Titus Wormer
- * @license MIT
- * @module character-reference-invalid:script
- * @fileoverview Generate
- */
-
 'use strict';
 
-/* Dependencies. */
 var fs = require('fs');
 var jsdom = require('jsdom');
 var bail = require('bail');
 
-/* Constants. */
-var URI = 'https://html.spec.whatwg.org/multipage/syntax.html';
-
-/* Read. */
-jsdom.env(URI, function (err, window) {
+jsdom.env('https://html.spec.whatwg.org/multipage/syntax.html', function (err, window) {
   bail(err);
 
-  /* Transform. */
   var $table = window.document.getElementById('table-charref-overrides');
   var $rows = $table.querySelectorAll('tbody > tr');
   var data = {};
@@ -36,6 +22,5 @@ jsdom.env(URI, function (err, window) {
     data[numeric] = char;
   });
 
-  /* Write. */
   fs.writeFileSync('index.json', JSON.stringify(data, 0, 2) + '\n');
 });
