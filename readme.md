@@ -1,4 +1,4 @@
-# character-reference-invalid [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# character-reference-invalid [![Build Status][travis-badge]][travis]
 
 HTML invalid numeric character reference information.
 
@@ -50,10 +50,6 @@ See [html.spec.whatwg.org][html].
 [travis-badge]: https://img.shields.io/travis/wooorm/character-reference-invalid.svg
 
 [travis]: https://travis-ci.org/wooorm/character-reference-invalid
-
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/character-reference-invalid.svg
-
-[codecov]: https://codecov.io/github/wooorm/character-reference-invalid
 
 [npm]: https://docs.npmjs.com/cli/install
 
