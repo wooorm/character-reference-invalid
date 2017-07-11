@@ -4,7 +4,7 @@ HTML invalid numeric character reference information.
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install character-reference-invalid
@@ -13,9 +13,9 @@ npm install character-reference-invalid
 ## Usage
 
 ```js
-console.log(characterReferenceInvalid[0x80]); // €
-console.log(characterReferenceInvalid[0x89]); // ‰
-console.log(characterReferenceInvalid[0x99]); // ™
+console.log(characterReferenceInvalid[0x80]); //=> '€'
+console.log(characterReferenceInvalid[0x89]); //=> '‰'
+console.log(characterReferenceInvalid[0x99]); //=> '™'
 ```
 
 ## API
@@ -42,7 +42,7 @@ See [html.spec.whatwg.org][html].
 
 [codecov]: https://codecov.io/github/wooorm/character-reference-invalid
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
