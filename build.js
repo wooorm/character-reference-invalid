@@ -4,12 +4,14 @@ var fs = require('fs');
 var jsdom = require('jsdom');
 var bail = require('bail');
 
-jsdom.env('https://html.spec.whatwg.org/multipage/syntax.html', function (err, window) {
+jsdom.env('https://html.spec.whatwg.org/multipage/parsing.html', function (err, window) {
   bail(err);
 
   var $table = window.document.getElementById('table-charref-overrides');
   var $rows = $table.querySelectorAll('tbody > tr');
-  var data = {};
+  var data = {
+    0: '�'
+  };
 
   [].forEach.call($rows, function ($row) {
     var cells = $row.querySelectorAll('td');
