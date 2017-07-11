@@ -1,28 +1,34 @@
 'use strict';
 
 var fs = require('fs');
-var jsdom = require('jsdom');
+var https = require('https');
 var bail = require('bail');
+var concat = require('concat-stream');
+var unified = require('unified');
+var parse = require('rehype-parse');
+var selectAll = require('hast-util-select').selectAll;
+var toString = require('hast-util-to-string');
 
-jsdom.env('https://html.spec.whatwg.org/multipage/parsing.html', function (err, window) {
-  bail(err);
+var data = {
+  0: '�'
+};
 
-  var $table = window.document.getElementById('table-charref-overrides');
-  var $rows = $table.querySelectorAll('tbody > tr');
-  var data = {
-    0: '�'
-  };
+https.get('https://html.spec.whatwg.org/multipage/parsing.html', function (res) {
+  res.pipe(concat(onconcat)).on('error', bail);
 
-  [].forEach.call($rows, function ($row) {
-    var cells = $row.querySelectorAll('td');
-    var numeric = cells[0].textContent;
-    var char = cells[1].textContent;
+  function onconcat(buf) {
+    var tree = unified().use(parse).parse(buf);
 
-    numeric = parseInt(numeric.slice(2), 16);
-    char = String.fromCharCode(parseInt(char.slice(2), 16));
+    selectAll('#table-charref-overrides tbody tr', tree).forEach(each);
 
-    data[numeric] = char;
-  });
+    function each(row) {
+      var cells = selectAll('td', row);
+      var numeric = parseInt(toString(cells[0]).slice(2), 16);
+      var char = String.fromCharCode(parseInt(toString(cells[1]).slice(2), 16));
 
-  fs.writeFileSync('index.json', JSON.stringify(data, 0, 2) + '\n');
+      data[numeric] = char;
+    }
+
+    fs.writeFile('index.json', JSON.stringify(data, 0, 2) + '\n', bail);
+  }
 });
