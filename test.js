@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var characterReferenceInvalid = require('./');
+var characterReferenceInvalid = require('.');
 
 test('characterEntities', function (t) {
   t.equal(characterReferenceInvalid[0x80], '€');
