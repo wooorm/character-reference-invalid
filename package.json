@@ -40,7 +40,7 @@
   },
   "scripts": {
     "generate": "node build",
-    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "build-bundle": "browserify index.json --bare -s characterReferenceInvalid > character-reference-invalid.js",
     "build-mangle": "esmangle character-reference-invalid.js > character-reference-invalid.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
