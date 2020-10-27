@@ -15,14 +15,12 @@ var data = {
 
 https.get('https://html.spec.whatwg.org/multipage/parsing.html', onconnection)
 
-function onconnection(res) {
-  res.pipe(concat(onconcat)).on('error', bail)
+function onconnection(response) {
+  response.pipe(concat(onconcat)).on('error', bail)
 }
 
 function onconcat(buf) {
-  var tree = unified()
-    .use(parse)
-    .parse(buf)
+  var tree = unified().use(parse).parse(buf)
 
   selectAll('#table-charref-overrides tbody tr', tree).forEach(each)
 
