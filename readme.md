@@ -82,4 +82,4 @@ See [`html.spec.whatwg.org`][html].
 
 [author]: https://wooorm.com
 
-[html]: https://html.spec.whatwg.org/multipage/syntax.html#table-charref-overrides
+[html]: https://html.spec.whatwg.org/multipage/parsing.html#table-charref-overrides
