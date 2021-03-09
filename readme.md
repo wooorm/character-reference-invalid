@@ -1,6 +1,7 @@
 # character-reference-invalid
 
 [![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
@@ -53,9 +54,13 @@ See [`html.spec.whatwg.org`][html].
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/character-reference-invalid.svg
+[build-badge]: https://github.com/wooorm/character-reference-invalid/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/character-reference-invalid
+[build]: https://github.com/wooorm/character-reference-invalid/actions
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/character-reference-invalid.svg
+
+[coverage]: https://codecov.io/github/wooorm/character-reference-invalid
 
 [downloads-badge]: https://img.shields.io/npm/dm/character-reference-invalid.svg
 
