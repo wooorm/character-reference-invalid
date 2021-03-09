@@ -9,6 +9,9 @@ HTML invalid numeric character reference information.
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -18,7 +21,7 @@ npm install character-reference-invalid
 ## Use
 
 ```js
-var characterReferenceInvalid = require('character-reference-invalid')
+import {characterReferenceInvalid} from 'character-reference-invalid'
 
 console.log(characterReferenceInvalid[0x80]) // => '€'
 console.log(characterReferenceInvalid[0x89]) // => '‰'
@@ -26,6 +29,9 @@ console.log(characterReferenceInvalid[0x99]) // => '™'
 ```
 
 ## API
+
+This package exports the following identifiers: `characterReferenceInvalid`.
+There is no default export.
 
 ### `characterReferenceInvalid`
 

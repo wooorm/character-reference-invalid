@@ -1,7 +1,5 @@
-'use strict'
-
-var test = require('tape')
-var characterReferenceInvalid = require('.')
+import test from 'tape'
+import {characterReferenceInvalid} from './index.js'
 
 test('characterEntities', function (t) {
   t.equal(characterReferenceInvalid[0x80], '€')
