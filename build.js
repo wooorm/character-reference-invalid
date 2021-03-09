@@ -21,15 +21,16 @@ function onconnection(response) {
 
 function onconcat(buf) {
   var tree = unified().use(parse).parse(buf)
+  var rows = selectAll('#table-charref-overrides tbody tr', tree)
+  var index = -1
+  var cells
 
-  selectAll('#table-charref-overrides tbody tr', tree).forEach(each)
+  while (++index < rows.length) {
+    cells = selectAll('td', rows[index])
 
-  function each(row) {
-    var cells = selectAll('td', row)
-    var numeric = parseInt(toString(cells[0]).slice(2), 16)
-    var char = String.fromCharCode(parseInt(toString(cells[1]).slice(2), 16))
-
-    data[numeric] = char
+    data[parseInt(toString(cells[0]).slice(2), 16)] = String.fromCharCode(
+      parseInt(toString(cells[1]).slice(2), 16)
+    )
   }
 
   fs.writeFile('index.json', JSON.stringify(data, null, 2) + '\n', bail)
