@@ -1,4 +1,4 @@
-export var characterReferenceInvalid = {
+export const characterReferenceInvalid = {
   0: '�',
   128: '€',
   130: '‚',
