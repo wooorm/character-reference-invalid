@@ -1,6 +1,6 @@
 {
   "name": "character-reference-invalid",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Map of invalid numeric character references to their replacements, according to HTML",
   "license": "MIT",
   "keywords": [
