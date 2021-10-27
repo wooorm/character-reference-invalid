@@ -21,10 +21,9 @@ function onconcat(buf) {
   const tree = unified().use(rehypeParse).parse(buf)
   const rows = selectAll('#table-charref-overrides tbody tr', tree)
   let index = -1
-  let cells
 
   while (++index < rows.length) {
-    cells = selectAll('td', rows[index])
+    const cells = selectAll('td', rows[index])
 
     data[Number.parseInt(toString(cells[0]).slice(2), 16)] =
       String.fromCharCode(Number.parseInt(toString(cells[1]).slice(2), 16))
