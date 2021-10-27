@@ -1,7 +1,7 @@
 {
   "name": "character-reference-invalid",
   "version": "2.0.0",
-  "description": "HTML invalid numeric character reference information",
+  "description": "Map of invalid numeric character references to their replacements, according to HTML",
   "license": "MIT",
   "keywords": [
     "html",
@@ -52,7 +52,7 @@
   "scripts": {
     "prepublishOnly": "npm run build && npm run format",
     "generate": "node build",
-    "build": "rimraf \"test/**/*.d.ts\" \"*.d.ts\" && tsc && type-coverage",
+    "build": "rimraf \"*.d.ts\" && tsc && type-coverage",
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
     "test-api": "node --conditions development test.js",
     "test-coverage": "c8 --check-coverage --branches 100 --functions 100 --lines 100 --statements 100 --reporter lcov npm run test-api",

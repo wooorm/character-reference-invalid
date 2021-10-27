@@ -33,9 +33,16 @@ function onconcat(buf) {
 
   fs.writeFile(
     'index.js',
-    'export const characterReferenceInvalid = ' +
-      JSON.stringify(data, null, 2) +
-      '\n',
+    [
+      '/**',
+      ' * Map of invalid numeric character references to their replacements, according to HTML.',
+      ' *',
+      ' * @type {Record<number, string>} ',
+      ' */',
+      'export const characterReferenceInvalid = ' +
+        JSON.stringify(data, null, 2),
+      ''
+    ].join('\n'),
     bail
   )
 }
