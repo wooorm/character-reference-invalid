@@ -7,16 +7,18 @@ import rehypeParse from 'rehype-parse'
 import {selectAll} from 'hast-util-select'
 import {toString} from 'hast-util-to-string'
 
+/** @type {Record.<number, string>} */
 const data = {
   0: '�'
 }
 
-https.get('https://html.spec.whatwg.org/multipage/parsing.html', onconnection)
-
-function onconnection(response) {
+https.get('https://html.spec.whatwg.org/multipage/parsing.html', (response) => {
   response.pipe(concat(onconcat)).on('error', bail)
-}
+})
 
+/**
+ * @param {Buffer} buf
+ */
 function onconcat(buf) {
   const tree = unified().use(rehypeParse).parse(buf)
   const rows = selectAll('#table-charref-overrides tbody tr', tree)
