@@ -47,17 +47,17 @@ In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 npm install character-reference-invalid
 ```
 
-In Deno with [Skypack][]:
+In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {characterReferenceInvalid} from 'https://cdn.skypack.dev/character-reference-invalid@2?dts'
+import {characterReferenceInvalid} from 'https://esm.sh/character-reference-invalid@2'
 ```
 
-In browsers with [Skypack][]:
+In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {characterReferenceInvalid} from 'https://cdn.skypack.dev/character-reference-invalid@2?min'
+  import {characterReferenceInvalid} from 'https://esm.sh/character-reference-invalid@2?bundle'
 </script>
 ```
 
@@ -141,7 +141,7 @@ See [How to Contribute to Open Source][contribute].
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[skypack]: https://www.skypack.dev
+[esmsh]: https://esm.sh
 
 [license]: license
 
