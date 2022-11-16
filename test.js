@@ -1,10 +1,9 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {characterReferenceInvalid} from './index.js'
 
-test('characterEntities', function (t) {
-  t.equal(characterReferenceInvalid[0x80], '€')
-  t.equal(characterReferenceInvalid[0x89], '‰')
-  t.equal(characterReferenceInvalid[0x99], '™')
-
-  t.end()
+test('characterEntities', function () {
+  assert.equal(characterReferenceInvalid[0x80], '€')
+  assert.equal(characterReferenceInvalid[0x89], '‰')
+  assert.equal(characterReferenceInvalid[0x99], '™')
 })
