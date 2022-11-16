@@ -16,7 +16,7 @@ HTML.
 *   [Use](#use)
 *   [API](#api)
     *   [`characterReferenceInvalid`](#characterreferenceinvalid)
-*   [Source](#source)
+*   [Data](#data)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -41,7 +41,7 @@ places).
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+In Node.js (version 14.14+, 16.0+), install with [npm][]:
 
 ```sh
 npm install character-reference-invalid
@@ -73,26 +73,27 @@ console.log(characterReferenceInvalid[0x99]) // => '™'
 
 ## API
 
-This package exports the following identifiers: `characterReferenceInvalid`.
+This package exports the identifier `characterReferenceInvalid`.
 There is no default export.
 
 ### `characterReferenceInvalid`
 
-`Record<number, string>` — mapping between invalid numeric character reference
-codes to replacements characters.
+Map of invalid numeric character references to their replacements, according to
+HTML (`Record<number, string>`).
 
-## Source
+## Data
 
 See [`html.spec.whatwg.org`][source].
 
 ## Types
 
 This package is fully typed with [TypeScript][].
+It exports no additional types.
 
 ## Compatibility
 
 This package is at least compatible with all maintained versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 It also works in Deno and modern browsers.
 
 ## Security
